@@ -9,6 +9,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /// @notice The owner of the SC selects a whitelist of addresses which will be able to make up to 20 proposals,
 /// then, they are able to vote for any proposal (only one vote in total). The owner choses when to close the 
 /// voting process and can tally votes by triggering a function at the end
+/// @dev DDOS ATTACKS :
+/// Voters.nbProposals is limited to 20 (to avoid Ddos attacks). Better to limit the amount o proposals
+/// per Voter than the total amount of proposal in the proposal array : So every Voter is limited and cannot limit
+/// the others.
 
 contract Voting is Ownable {
 
@@ -18,7 +22,7 @@ contract Voting is Ownable {
         bool isRegistered;
         bool hasVoted;
         uint votedProposalId;
-        uint nbProposals; // must be <= 20
+        uint nbProposals; // must be <= 20 (to avoid Ddos attacks)
     }
 
     struct Proposal {
