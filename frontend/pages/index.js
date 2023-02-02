@@ -15,7 +15,7 @@ export default function Home() {
   // from Chakra-UI
   const toast = useToast();
 
-  const contractAddress = "0xD73E5d2FBD4a9E159C25a9F3A1D72B8b488eC097";
+  const contractAddress = "0x4250823810e8f390FD44a4592FE149E55CFAa3e2";
 
   // The different useStates
   const [owner, setOwner] = useState('');
