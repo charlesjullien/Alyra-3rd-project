@@ -558,7 +558,7 @@ return (
                       </Button>
                   </Flex>
               }
-              {status === "Votes tallied" && isRegistered &&
+              {status === "Votes tallied" && isConnected &&
                   <Flex 
                       width="70%" 
                       direction="row" 
